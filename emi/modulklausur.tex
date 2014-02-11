@@ -1,0 +1,57 @@
+\documentclass[12pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{delarray}
+\usepackage{amssymb}
+\usepackage[landscape]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage[compact]{titlesec}
+
+\pagestyle{empty}
+\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}
+
+\makeatletter
+
+\makeatother
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\footnotesize
+\begin{multicols}{3}
+
+\begin{center}
+     \Large{\textbf{Einführung in die Medieninformatik}} \\
+     \small{Für EMI im 1. Semester beim Bart}
+\end{center}
+
+\section{Text und HTML}
+\subsection{Zeichensätze}
+Zeichensatz definiert Zuordnung von Zahlen zu Zeichen.
+\begin{enumerate}
+\item \textbf{ASCII}: 7-bit-Zeichensatz (128 Zuordnungen), 0-31 Steuerzeichen. Neuere Zeichensätze sind meist abwärtskompatibel (Erste 128 Zuordnungen entsprechen ASCII)
+\item \textbf{ISO-8859-1, ISO-8859-2 ... ISO-8859-16}: 8-bit-Zeichensätze (256 Zuordnungen), 0-127 ist ASCII, darüber Sonderzeichen wie deutsche Umlauts (-1: Latin1 westeuropäisch, -2: Latin2 osteuropäisch, -5: Kyrillisch, -6: Arabisch, -7: Griechischi [...], -15: Westeuropäisch mit Eurozeichen)
+\item \textbf{Unicode}: Internationaler Zeichensatz. Verschiedene Standards: UCS-2 mit 2 hoch 16 Zeichen, UCS-4 mit doppelt so vielen Ebenen. Unicode 5 kennt 99k Zeichen.\\
+Unicode-Formate:
+\begin{itemize}
+\item \textit{UTF-32}: Immer 4 Bytes für ein Zeichen
+\item \textit{UTF-16}: 2 Bytes pro Zeichen mit Möglichkeit für mehr, wenn in ersten 2 Bytes spezille Surrogate-Kodierung benutzt wird
+\item \textit{UTF-8}: Wichtigstes Unicode-Format, weit verbreitet z. B. für XML. Besteht aus einem Byte pro Zeichen, das nur ASCII ist, wenn das oberste Bit gesetzt ist, ansonsten gehören die nächsten Bytes auch mit zum Zeichen, dann 2-4 Bytes. Aufbauschema: \\
+Höchstes Bit ist nicht gesetzt, wenn es nur ein ASCII-Zeichen ist und somit nur aus einem Byte besteht. Ist das höchste Bit gesetzt, gibt die Anzahl der dann folgenden Bits die 1 sind an, aus wie vielen Bytes das Zeichen besteht. Ist das erste Byte z. B. 11100000, folgen noch zwei weitere Bytes für das gleiche Zeichen. 
+\end{itemize}
+\end{enumerate}
+
+\subsection{Braille-Schrift}
+Von Louis Braille 1820 für Blinde entwickelt, für viele natürliche Sprachen verfügbar. Gibt Zeichen als fühlbare Punkte auf dem Papier wieder (6 - 8 Punkte kodieren ein Zeichen). Spezielle Schreibweisen für Formeln, Musik o. ä.
+
+\subsection{Schrift}
+
+
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+
+Gebaut mit \LaTeX
+
+\end{multicols}
+\end{document}
