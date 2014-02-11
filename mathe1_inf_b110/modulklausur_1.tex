@@ -9,6 +9,21 @@
 
 \geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}
 \pagestyle{empty}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+
 \makeatother
 \setcounter{secnumdepth}{0}
 
@@ -69,6 +84,7 @@ Es existiert ein $A_{-1}$ zu einer Matrix $A$, wenn $A$ quadratisch ist und das 
 \end{itemize}
 \subsection{ggT und euklidischer Algorithmus}
 ggT wird mit euklidischem Algorithmus bestimmt. In erweiterter Form:
+\vspace*{0.5cm}\newline
 \begin{tabular}{|c|c|c|c|c|c|c|}
 \hline \rule[-2ex]{0pt}{5.5ex} $i$ & $n_i$ & $n_{i+1}$ &  $r$ & $q_i$ & $a_{i+1}$ & $a{_i}$ \\ 
 \hline \rule[-2ex]{0pt}{5.5ex} 1. & \textcolor{red}{238} & \textcolor{blue}{154} & 84 & 1 & \textcolor{blue}{2} & \textcolor{red}{-3} \\ 
@@ -78,6 +94,7 @@ ggT wird mit euklidischem Algorithmus bestimmt. In erweiterter Form:
 \hline \rule[-2ex]{0pt}{5.5ex} 5. & 14 & 0 & ggT: 14 &  & 1 & 0 \\ 
 \hline 
 \end{tabular}
+\vspace{0.5cm}\newline
 $a_i = a_{i+2} - q_i * a_{i+1}$\\
 $q_i = n_i div n_{i+1}$
 \subsection{Restklassenringe}
@@ -93,8 +110,7 @@ $q_i = n_i div n_{i+1}$
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
-2013, Tim Kluge
-
+Gebaut mit \LaTeX
 
 \end{multicols}
 \end{document}
