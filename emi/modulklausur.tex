@@ -114,7 +114,32 @@ Eigenschaften: Editierbar? WYSISWG? Lesbar? Medien einbindbar? Funktionsumfang? 
 \subsection{Barrierefreiheit}
 Barrieren für Behinderte auf Webseiten (Sehbehinderte, Farbenblinde, Gehörbehinderte, Motorisch behińderte, geistig behinderte)
 \subsection{CSS}
-Strikte Trennung zwischen Präsentation und Design, definierte Formate für XHTML-Tags. Text-Formatierung, Positionierung von Elementen, Rahmen und Leerräume, Hintergrund, Formatierung von Tabellen, CSS einbinden mit \lstinline|<style type="text/css"></style>| für direktes Reinschreiben von CSS, CSS-Datei im Head des HTML-Dokuments verlinken mittels \lstinline|<link rel="stylesheet"| \lstinline|type="text/css" href="datei.css">|. HTML-Elemente koennen auch mit style-Attribut und CSS-Angaben gestyled werden.
+Strikte Trennung zwischen Präsentation und Design, definierte Formate für XHTML-Tags. Text-Formatierung, Positionierung von Elementen, Rahmen und Leerräume, Hintergrund, Formatierung von Tabellen, CSS einbinden mit \lstinline|<style type="text/css"></style>| für direktes Reinschreiben von CSS, CSS-Datei im Head des HTML-Dokuments verlinken mittels \lstinline|<link rel="stylesheet"| \lstinline|type="text/css" href="datei.css">|. HTML-Elemente koennen auch mit style-Attribut und CSS-Angaben gestyled werden.\\
+CSS besteht aus Selektoren für Elemente (mittels ID oder Klasse) und Style-Attributen. Bspw.: \lstinline|#foo { color: red; }| setzt die Schriftfarbe im Element mit der ID foo auf rot. Mögliche Styleattribute sind z. B. "font-family" (Arial, sans-serif), "font-weight" (bold).\\
+\subsection{Positionierung}
+Mit CSS werden Elemente nach dem Boxmodel layoutet, d. h. jedes Element bildet eine Box. CSS-Attribute für jedes Element sind z. B. "margin" (Außenrand um die Box des Elements, z. B. "5px"), "padding" (Innenabstand um den Boxrand), "border-width" (Randbreite), "border-color" (Randfarbe).
+\subsection{Navigationstechniken}
+Websiten sollten sets einwandfrei navigierbar sein (vor / zurück, Nutzer muss sich zurechtfinden können). Bspw. durch Setzen von Navigationsleisten, Suchmaschinen etc.
+\subsection{Karten in HTML}
+Map-Element definiert Karte. Bsp.:
+\begin{lstlisting}
+<map name="schland">
+<area shape="rect" cords="11,10,59,29"
+href="uri" alt="Hier"></map>
+<img src="map.png" usemap="#schland">
+\end{lstlisting}
+Beispielsweise rect mit coords="x1,y1,x2,y2" mit 1=Obere Linke Ecke,2=Untere rechte Ecke oder "circle" mit "x,y,r" oder "poly" "x1,y1,x2,y2..."
+\section{Dynamisches Web}
+Dynamik z. B. durch auf dem Web-Server dynamisch generierte Inhalte durch PHP, ASP.net o. ä. Im Browser wird JavaScript benutzt.
+\subsection{JavaScript}
+\begin{enumerate}
+\item \textbf{Objekt}: Ein JavaScript-Objekt besteht aus Schlüsseln, denen Werte zugeordnet werden (bspw. das document-Objekt hat den Schlüssel bgcolor mit dem Wert white).
+\item \textbf{Funktionen / Methoden / Aktionen}: Wie Funktionen in C, könnnen auch Variablen zugeordnet werden
+\item \textbf{Ereignisse}: Das Ereignis "onmouseover" eines HTML-Elements kann durch JavaScript auf eine Funktion gesetzt werden.
+\item \textbf{Variablen}: Können Zahlen, Strings, Booleans, Objekte, Funktionen sein. Bsp. zur Dekleration: \lstinline|var month = "Januar";|
+\item Ausdrücke ordnen einer Variable einen Wert zu (Beispiel s. o.)
+\item Operatoren verändern Variablen (siehe C, bspw. "+", "==")
+\end{enumerate}
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
