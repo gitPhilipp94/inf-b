@@ -14,6 +14,8 @@
 \usepackage[utf8]{inputenc}
 \usepackage{color}
 \usepackage[compact]{titlesec}
+\usepackage{graphicx}
+\usepackage{listings}
 
 \pagestyle{empty}
 \geometry{top=1cm,left=1cm,right=1cm,bottom=1cm}
@@ -33,6 +35,12 @@
      \small{Für EMI im 1. Semester beim Bart}
 \end{center}
 
+\section{Allgemeines}
+\subsection{Aufgabenstellungen}
+Berechenbarkeit (Lösen mathematischer Probleme), Unberechenbarkeit, Curchsche These (Gleichwertigkeit aller Maschinenkonzepte), Chomsky-Hierarchie (Zusammenhang Automaten <-> Sprachgrammatik), Programmkomplexität, Programmverifikation
+\subsection{Medienkompetenz}
+Medialitätsbewusstsein + Medienwissen, Medienspezifisches Rezeptionsmuster, Medienbezogene Genussfähigkeit (Bedürfnis nach Identifikation und Unterhaltung), Medienbezogene Kritikfähigkeit.\\
+Medien: Mittel zur Speicherung von Information (Physisch oder Format, Text, Video, Audio, )
 \section{Text und HTML}
 \subsection{Zeichensätze}
 Zeichensatz definiert Zuordnung von Zahlen zu Zeichen.
@@ -48,13 +56,65 @@ Unicode-Formate:
 Höchstes Bit ist nicht gesetzt, wenn es nur ein ASCII-Zeichen ist und somit nur aus einem Byte besteht. Ist das höchste Bit gesetzt, gibt die Anzahl der dann folgenden Bits die 1 sind an, aus wie vielen Bytes das Zeichen besteht. Ist das erste Byte z. B. 11100000, folgen noch zwei weitere Bytes für das gleiche Zeichen. 
 \end{itemize}
 \end{enumerate}
-
 \subsection{Braille-Schrift}
 Von Louis Braille 1820 für Blinde entwickelt, für viele natürliche Sprachen verfügbar. Gibt Zeichen als fühlbare Punkte auf dem Papier wieder (6 - 8 Punkte kodieren ein Zeichen). Spezielle Schreibweisen für Formeln, Musik o. ä.
-
 \subsection{Schrift}
-
-
+\subsection{Eigenschaften}
+\begin{center}
+\includegraphics[height=130pt]{typografie.png}
+\textit{(Bild: Brian Ammon, CC-BY)}
+\end{center}
+\begin{enumerate}
+\item Höhe wird in Punkt angegeben. Ein Punkt ist meist 1/72 Zoll (TeX, DTP / Postscript), 1 Pica sind 12 Punkte.
+\item Schrifstärke (manger, normal, fett), Schriftbreite (schmal, normal, breit), Schriftlage (normal, kursiv)
+\item Vektorschriften: Definition durch Vektoren, Rasterschriften: Definition durch Pixelgrafik für je ein Zeichen
+\item Serifen: Helfen bei Lesbarkeit, sollte nur bei Fließtext benutzt werden.
+\item Kerning: Anpassung von Zeichenabständen bei parallelen Diagonalen ("BRAVO": Zusammenrücken von A und V), Definition pro Buchstabenpaar. Kann doof sein bei geringen Abständen. 
+\end{enumerate}
+\subsection{Absätze}
+Absatzformat gibt Abstände und Einrückungen an. Möglich sind z. B. Blocksatz (Automatische Anpassung des Wortabstandes, sodass stets ganze Zeile gefüllt wird), Flattersatz / Mittelachsensatz (optimale Wortabstände). Seitenlayout: Kopf, Rumpf, Fuß. 
+\subsection{Formate}
+Eigenschaften: Editierbar? WYSISWG? Lesbar? Medien einbindbar? Funktionsumfang? Programmierbar?
+\begin{itemize}
+\item \textbf{Plain}
+\item \textbf{Rich Text} (Microsoft), eigene Definition für Medien, nicht programmierbar, alt, WYSIWYG, MS Word, \LaTeX, PostScript, PDF, XHTML - \begin{lstlisting}
+{\rtf Hallo \par {\i Dies} war kursiv.
+\par Noch ne Zeile.}\end{lstlisting}
+\item \LaTeX (Frei), voll programmierbar, kein WYSIWYG (wirft PDF o. ä. aus), Medien einbindbar, gute Formelsetzungsbibliotheken, vielseitig und toll, aber kompliziert
+\item \textbf{PDF} (Adobe), baut auf Postscript auf, Layout-Treu, Rechtemanagment, Einbetten von Schriften problematisch, kaum editierbar, wird aus anderen Formatne generiert
+\item \textbf{HTML}: Trennung von Struktur und Style mit CSS, Scripting (Document Object Model: Abbildung des XML-Baums auf JavaScript), programmierbar, kein WYSIWYG, Plugins
+\end{itemize}
+\section{Internetz}
+\begin{itemize}
+\item \textbf{HTTP}: Protokoll zwischen Web-Server und Web-Client (Browser)
+\item \textbf{URI}: Bezeichnung und Adressierung beliebiger Daten im Netz (z. B. http://www.wh2.tu-dresden.de)
+\item \textbf{Hypertext}: "Nicht-lineares" Textmedium, verbindet Inhalte durch Hyperlinks (URI, entfernte URIs wie "http://google.de", "ftp://..." oder lokale URIs wie "mailto:", die an andere Programme auf dem Rechner gehen)
+\item \textbf{Mark-Up-Sprachen}: Beschreibung von Text durch Text, bspw. HTML mit öffnenden Tags und schließenden Tags und Inhalt dazwischen
+\end{itemize}
+\subsection{HTML}
+\begin{lstlisting}
+<html><head><title>Hallo Welt</title>
+</head><body><h1>Grosse Ueberschrift
+</h1><a href="uri">Link</a></body></html>
+\end{lstlisting}
+\begin{itemize}
+\item Attribute bspw. href mit Ziel-URI, align mit Ausrichtung o. ä.
+\item \lstinline|<a>|-Elemente sind Anker, verlinkt wird per \lstinline|"#ziel"| und gesetzt per name-Attribut
+\item Bilder mit
+\lstinline|<img src="uri" alt="beschreibung"|
+\lstinline|width="300" height="300">|
+\item Listen mit ul (unordered list) und ol (ordered list)-Elementen, Einträge mit li (list item)-Elementen
+\item Tabellen mit table, tr für Zeilen und td für Spalten.
+\begin{lstlisting}
+<table><tr><th>1</th><th>2</th></tr>
+<td>A</td><td>b</td></tr></table>
+\end{lstlisting}
+\item div für allgemeine Blöcke
+\end{itemize}
+\subsection{Barrierefreiheit}
+Barrieren für Behinderte auf Webseiten (Sehbehinderte, Farbenblinde, Gehörbehinderte, Motorisch behińderte, geistig behinderte)
+\subsection{CSS}
+Strikte Trennung zwischen Präsentation und Design, definierte Formate für XHTML-Tags. Text-Formatierung, Positionierung von Elementen, Rahmen und Leerräume, Hintergrund, Formatierung von Tabellen, CSS einbinden mit \lstinline|<style type="text/css"></style>| für direktes Reinschreiben von CSS, CSS-Datei im Head des HTML-Dokuments verlinken mittels \lstinline|<link rel="stylesheet"| \lstinline|type="text/css" href="datei.css">|. HTML-Elemente koennen auch mit style-Attribut und CSS-Angaben gestyled werden.
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
