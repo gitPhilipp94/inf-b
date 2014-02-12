@@ -139,11 +139,21 @@ Dynamik z. B. durch auf dem Web-Server dynamisch generierte Inhalte durch PHP, A
 \item \textbf{Variablen}: Können Zahlen, Strings, Booleans, Objekte, Funktionen sein. Bsp. zur Dekleration: \lstinline|var month = "Januar";|
 \item Ausdrücke ordnen einer Variable einen Wert zu (Beispiel s. o.)
 \item Operatoren verändern Variablen (siehe C, bspw. "+", "==")
+\item Einbinden einer JavaScript-Datei in HTML: \begin{lstlisting}
+<script src="js.js"
+type="text/javascript"></script>
+\end{lstlisting}
+Einbetten von JS in HTML:
+\begin{lstlisting}
+<script type="text/javascript">
+\end{lstlisting}
+Zugreifen auf Dokumenteigenschaften in JavaScript über das globale window-Objekt, bspw. "window.location.href = 'http://google.de'". window-Objekt enthält document-Objekt, über das HTML-Elemente mittels "getElementById" abgefragt werden können.\\
 \end{enumerate}
+\subsection{HTML5}
+HTML5 als zukünftiger Standard führt HTML-Elemente für Strukturierung ein (header, nav) und neue Dinge wie das Video-Tag.\\
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
 Gebaut mit \LaTeX
-
 \end{multicols}
 \end{document}
